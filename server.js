@@ -13,7 +13,10 @@ app.get('/api/customers', cors(), (req, res) => {
   res.json(customers);
 });
 // Priority serve any static files.
-app.use(express.static(path.resolve(__dirname, './client/build')));
+// app.use(express.static(path.resolve(__dirname, './client/build')));
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
 const port = 5000;
 
 app.listen(port, () => `Server running on port ${port}`);
