@@ -1,6 +1,6 @@
 const express = require('express');
-// const cors = require('cors');gig
-// const path = require('path');
+const cors = require('cors');
+const path = require('path');
 const app = express();
 
 app.get('/api/customers', cors(), (req, res) => {
@@ -12,7 +12,7 @@ app.get('/api/customers', cors(), (req, res) => {
 
   res.json(customers);
 });
-Priority serve any static files.
+// Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, './client/build')));
 // app.get('/', function (req, res) {
 //   res.send('Hello World      yeah boi')
